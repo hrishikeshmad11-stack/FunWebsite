@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>|| Fun 4||</title>
+    <link rel="stylesheet" href="funstyling4.css">
+    <link href="https://fonts.googleapis.com/css2?family=Iosevka+Charon:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="fun.html">Home</a>
+    </header>
+    <p>This is a random number guessing game. (reload the site after guessing it right once)</p>
+    <form id="guess">
+        <label for="random">Enter a number between 1 and 100</label>
+        <input id="random" type="number" placeholder="Enter The Number">
+    </form>
+    <p id="result"></p>
+    <script>
+        let x = Math.random();
+        x=Math.ceil(x*100);
+        let result=document.getElementById("result");
+        let input = document.getElementById("random");
+        let form = document.getElementById("guess");
+        form.addEventListener("submit",function(event){
+        event.preventDefault();
+        let y=Number(input.value);
+        let s;
+        if(y>x){
+            s="Too High!"
+        }
+        else if(y<x){
+            s="Too Low!"
+        }
+        else{
+            s="YAY! The number was "+x;
+        }
+        result.textContent=s;
+        result.classList.remove("animate");
+
+        void result.offsetWidth; // forces browser to reset animation
+
+        result.classList.add("animate");
+        input.value = "";
+        })
+    </script>
+</body>
+</html>

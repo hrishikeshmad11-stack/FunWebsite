@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>|| Fun 2||</title>
+    <link rel="stylesheet" href="funstyling2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Iosevka+Charon:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="fun.html">Home</a>
+    </header>
+    <p>You can change the color of the background :)</p>
+    <nav>
+        <div class="box Box1">Box 1</div>
+        <div class="box Box2">Box 2</div>
+        <div class="box Box3">Box 3</div>
+        <div class="box Box4">Box 4</div>
+        <div class="box Box5">Box 5</div>
+        <div class="box Box6">Box 6</div>
+    </nav>
+    <script>
+        let boxes = document.querySelectorAll(".box");
+        for(let box of boxes){
+        box.addEventListener("click",function(){
+            let color=getComputedStyle(box).backgroundColor;
+            document.body.style.backgroundColor=color;
+        })
+        }
+    </script>
+</body>
+</html>

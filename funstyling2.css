@@ -1,0 +1,57 @@
+body{
+    margin:0;
+    font-family: 'Iosevka Charon', sans-serif;
+    font-size: 25px;
+}
+
+header{
+    background-color: azure;
+    display:flex;
+    justify-content: center;
+    border-bottom: 1px solid black;
+    padding:20px;
+}
+header a{
+    text-align: center;
+    width:90%;
+}
+
+nav{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+	grid-template-rows: repeat(2,1fr);
+    height:30vh;
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+
+}
+
+.box{
+    border:1px solid black;
+    width: 100px;
+    height: 100px;
+}
+
+.Box1{
+    background-color: orange;
+}
+
+.Box2{
+    background-color: green;
+}
+
+.Box3{
+    background-color: red;
+}
+.Box4{
+    background-color:blueviolet;
+}
+
+.Box5{
+    background-color:fuchsia;
+}
+
+.Box6{
+    background-color:deeppink;
+}

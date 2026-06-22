@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>|| Fun 3||</title>
+    <link rel="stylesheet" href="funstyling3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Iosevka+Charon:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="fun.html">Home</a>
+    </header>
+    <h1>Let's Calculate Your BMI!!</h1>
+    <nav>
+    <form id="BMI">
+        <label for="weight">Enter Your Weight in Kilograms:</label>
+        <input id="weight" type="number" placeholder="kg">
+        <label for="height">Enter Your Height in Centimeters:</label>
+        <input id="height" type="number" placeholder="cm">
+         <button type="submit">Calculate</button>
+    </form>
+    </nav>
+    <script>
+        let form = document.getElementById("BMI");
+        form.addEventListener("submit",function(event){
+        event.preventDefault();
+        let weight = Number(document.getElementById("weight").value);
+        let height = Number(document.getElementById("height").value);
+        let heightInMeters = height / 100;
+        let bmi = weight / (heightInMeters ** 2);
+        let s;
+        if(bmi<18.5){
+            s="Underweight";
+        }
+        else if(bmi>=18.5 && bmi<24.9){
+            s="Normal Weight";
+        }
+        else if(bmi>=24.9 && bmi<29.9){
+            s="Overweight";
+        }
+        else if(bmi>=29.9 && bmi<34.9){
+            s="of Obesity Class 1";
+        }
+        else if(bmi>=34.9 && bmi<39.9){
+            s="of Obesity Class 2";
+        }
+        else{
+            s="of Obesity Class 3"
+        }
+        let result = document.createElement("p");
+        result.textContent = "Your BMI is: "+bmi.toFixed(2)+". You are "+s;
+        form.appendChild(result);
+        })
+    </script>
+</body>
+</html>
